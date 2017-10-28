@@ -31602,7 +31602,7 @@ var UserForm = function (_React$Component) {
 																					{ style: { margin: '20px 0' } },
 																					_react2.default.createElement(_reactCropper2.default, {
 																								ref: 'cropper',
-																								src: 'https://www.muthootfinance.com/blog/wp-content/uploads/2017/01/PAN-card-labelling-alternate-image.jpg',
+																								src: 'https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
 																								style: { height: 200, width: '100%' }
 																								// Cropper.js options 
 																								, aspectRatio: 16 / 9,
