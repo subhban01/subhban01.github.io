@@ -1,0 +1,34 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.frame {
+  background-image: url(denice.gif);
+  background-repeat: repeat-x;
+  background-position: left center;
+  width: 100%;
+  height: 100%;
+  
+  -webkit-clip-path: circle(120px);
+  clip-path: circle(120px);
+}
+
+.message {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  font-size: 1.2em;
+  background: #0006;
+  padding: 1em;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
