@@ -9,6 +9,7 @@ ch = c.height;
 var color = '#4dc4a8';
 var shape = 'circle';
 var bgcolor = '#fff';
+var radius = 40;
 
 ctx.fillStyle = bgcolor;
 ctx.fillRect(0,0, c.width, c.height);
@@ -16,7 +17,7 @@ ctx.fillRect(0,0, c.width, c.height);
 
 function drawCircles(x, y){
 ctx.beginPath();
-ctx.arc(x, y, 40, 0, 2*Math.PI);
+ctx.arc(x, y, radius, 0, 2*Math.PI);
 ctx.closePath();
 ctx.fillStyle = bgcolor;
 ctx.fill();
@@ -83,6 +84,20 @@ bgpicker.addEventListener('change', function(){
 	ctx.fillRect(0,0, c.width, c.height);
 })
 
+
+var save = document.getElementById('save');
+save.addEventListener('click', function(){
+	dataURI = c.toDataURL('');
+	var url = dataURI.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+	window.open(url);
+	// window.location.href = 'data:application/octet-stream;base64,' + dataURI;
+})
+
+
+var size = document.getElementById('size');
+size.addEventListener('change', function(){
+	radius = size.value;
+})
 
 
 
