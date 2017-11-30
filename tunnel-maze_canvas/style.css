@@ -1,7 +1,37 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #e0e0e0;
+}
 footer{
   position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   width: 100%;
+}
+canvas{
+	border: 1px solid #4dc4a8;
+	margin: 10px;
+}
+.center{
+	display: flex;
+	justify-content: center;
+	margin-top: 35px;
+}
+.controls{
+	width: 200px;
+	height: 600px;
+	margin: 10px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+.controls_title{
+	padding-bottom: 30px;
+}
+.items{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
 }

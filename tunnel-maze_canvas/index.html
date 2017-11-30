@@ -4,12 +4,21 @@
 	<title>My first experiment with HTML5 canvas</title>
 </head>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 <body>
-
+<div class="center">
 <canvas id='c'></canvas>
-<script type="text/javascript" src='script.js' ></script>
+<div class="controls">
+<div class="controls_title"><strong>CONTROLS</strong></div>
+<div class="items">color<input id="color" type="color" name="" value="#4dc4a8"></div>
+<!-- <label for="color">shape</label>
+<input id="shape" type="button" name="" value="shape"> -->
+<div class="items">background color<input id="bgcolor" type="color" name="" value="#ffffff"></div>
+</div>
+</div>
 <footer>
-	<p>"Periscope experiment" created by <strong><a href="https://github.com/subhban01" style="text-decoration: none;color: #000;">Subhadeep</a></strong></p>
+	<p>"Canvas experiment" created by <strong><a href="https://github.com/subhban01" style="text-decoration: none;color: #000;">Subhadeep</a></strong></p>
 </footer>
+<script type="text/javascript" src='script.js' ></script>
 </body>
 </html>
