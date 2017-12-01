@@ -1,0 +1,119 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@font-face {
+  font-family: Biko;
+  src:url("./biko-black.woff");
+}
+header { 
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+header video {
+	width: 100%;
+	height: 225px;
+	object-fit: fill;
+}
+svg { 
+  width: 100%;
+  height: 225px;
+  position:absolute;
+  top: 0;
+  left: 0; // needed for FF, Safari, Edge
+  height: 100%;
+}
+svg text {
+  font-family: Biko, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 58px;
+}
+svg rect {
+  fill: white;
+}
+svg > rect {
+    -webkit-mask: url(#mask);
+    mask: url(#mask);
+}
+
+
+
+.controls{
+	width: 30%;
+	margin: 0 auto;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 20px;
+	border: 1px solid #ff8385;
+	margin-top: 80px;
+}
+.controls_title{
+	padding-top: 10px;
+	padding-bottom: 60px;
+	text-align: center;
+}
+.items{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
+	height: 25px;
+}
+#save{
+	padding: 10px 20px;
+	border-radius: 4px;
+	background-color: #ff8385;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+#save:hover{
+	cursor: pointer;
+}
+#music{
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select:none;
+}
+#music:hover{
+	cursor: pointer;
+}
+.enabled{
+	background-color: #ff8385;
+	border: 3px solid #ffb5d7;
+	color: #fff;
+}
+.disabled{
+	background-color: #d8d8d8;
+	border: 3px solid #bdbdbd;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
