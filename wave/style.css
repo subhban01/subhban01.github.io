@@ -18,3 +18,12 @@ canvas{
 	justify-content: center;
 	margin-top: 35px;
 }
+#result{
+	font-size: 1.5em;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+#selection{
+	color: #fff;
+}

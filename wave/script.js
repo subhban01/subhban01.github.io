@@ -22,6 +22,10 @@ var sliderY = 310;
 var sliderStartX = 95, sliderEndX = 893;
 var sliderWidth = 798, dotPosition = sliderWidth/6;
 
+var res = document.getElementById('result');
+var span = document.getElementById('selection');
+res.style.display = 'none';
+
 function init(){
 ctx.globalCompositeOperation='source-over';
 //bottom footer
@@ -30,6 +34,20 @@ ctx.fillRect(0,400, c.width, c.height);
 ctx.globalCompositeOperation='destination-over';
 ctx.fillStyle = grd;
 ctx.fillRect(0,380, c.width, c.height);
+	
+	//question & background
+	ctx.beginPath();
+	ctx.fillStyle = '#60696b';
+	ctx.fillRect(15,15, 970, 100);
+
+	ctx.globalCompositeOperation='source-over';
+    ctx.font = "35px Arial";
+	ctx.fillStyle = '#fff';
+	ctx.fillText('Are you happy with our customer service?', 180, 75);
+	ctx.font = "15px Arial";
+	ctx.fillText('Click to rate your experience'.toUpperCase(), 370, 150);
+	ctx.closePath();
+
 	//adding feedback options
 	var sideBuffer = 65;
 	ctx.font = "15px Arial";
@@ -114,6 +132,43 @@ for(i=0; i<7; i++){
 
 //onclick handler
 var x, y, startTime;
+var matrix = {
+	95: {
+		text: 'STRONGLY DISAGREE',
+		color: '#ee6e35',
+		y: 220
+	},
+	228: {
+		text: 'DISAGREE',
+		color: '#eba963',
+		y: 260
+	},
+	361: {
+		text: 'MILDLY DISAGREE',
+		color: '#e7c67b',
+		y: 290
+	},
+	494: {
+		text: 'NO OPINION',
+		color: '#d6d584',
+		y: 320
+	},
+	627: {
+		text: 'MILDLY AGREE',
+		color: '#c4e190',
+		y: 290
+	},
+	760: {
+		text: 'AGREE',
+		color: '#8cec9e',
+		y: 260
+	},
+	893: {
+		text: 'STRONGLY AGREE',
+		color: '#36f6b0',
+		y: 220
+	}
+}
 c.addEventListener('click', function(evt){
 	var rect = c.getBoundingClientRect();
 	x = evt.clientX - rect.left, y = evt.clientY - rect.top;
@@ -140,6 +195,9 @@ c.addEventListener('click', function(evt){
 	else{
 		animate(startTime, false);
 	}
+	res.style.display = 'flex';
+	span.style.backgroundColor = matrix[x].color;
+	span.innerText = matrix[x].text;
 },500);
 })
 function drawBeziers(x1){
@@ -152,8 +210,11 @@ function drawBeziers(x1){
 	if(y > 317){
 		y = 317;
 	}
-	else if(y < 280){
-		y = 280;
+
+	for(p in matrix){
+		if( p <= Math.floor(x1)+70 && p >= Math.ceil(x1)-70){
+			y = matrix[p].y;
+		}
 	}
 	ctx.beginPath();
 	ctx.moveTo(x1-200, y+420);
@@ -217,7 +278,7 @@ for(i=0; i<7; i++){
 
 
 var oldX = 475;
-var duration = 490;
+var duration = 600;
 
 function animate(t, reverse) {
 	var dist = Math.abs(grabberPos - x);
